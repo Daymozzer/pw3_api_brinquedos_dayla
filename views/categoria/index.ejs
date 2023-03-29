@@ -1,0 +1,43 @@
+<%- include('../partials/header.ejs') %>
+
+<body>
+
+    <div class="container">
+
+        <%- include('../partials/menu.ejs') %>
+
+        <div class="card">
+
+            <div class="card-header">
+                <h3>CADASTRO DE BRINQUEDOS</h3>
+            </div>
+
+            <div class="card-body">
+
+                <form action="http://localhost:3000/cadastrarDados" method="post">
+
+                    <label for="nome_brinquedo"></label>
+                    <input class="form-control" type="text" 
+                    name="nome_brinquedo" id="nome_brinquedo"
+                    placeholder="NOME DO BRINQUEDO">
+
+                    <label for="modelo_brinquedo"></label>
+                    <input class="form-control" type="text" 
+                    name="modelo_brinquedo" id="modelo_brinquedo"
+                    placeholder="MODELO DO BRINQUEDO">
+
+                    <button class="btn btn-success mt-3">CONFIRMAR</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<%- include('../partials/footer.ejs') %>
+
+</html>
