@@ -63,7 +63,7 @@ app.get('/editarBrinquedo/:cod_brinquedo', (req, res)=>{
         res.render('categoria/editarBrinquedo.ejs', {brinquedos});
     })
     
-})
+})//daydayday
 
 app.post('/editarBrinquedo', (req, res)=>{
 
