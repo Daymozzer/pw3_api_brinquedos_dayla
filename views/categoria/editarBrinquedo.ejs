@@ -1,0 +1,47 @@
+<%- include('../partials/header.ejs') %>
+
+<body>
+
+    <div class="container">
+
+        <%- include('../partials/menu.ejs') %>
+
+        <div class="card">
+
+            <div class="card-header">
+                <h3>EDITAR BRINQUEDOS</h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <form action="/editarBrinquedo" method="post">
+
+                    <label for="nome_brinquedo"></label>
+                    <input 
+                    class="form-control" type="text" 
+                    name="nome_brinquedo" id="nome_brinquedo"
+                    value="<%= brinquedos.data.nome_brinquedo %>">
+
+                    <input 
+                    type="hidden" 
+                    name="cod_brinquedo" 
+                    value="<%= brinquedos.data.cod_brinquedo %>">
+
+                    
+
+                    <button class="btn btn-success mt-2">EDITAR</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<%- include('../partials/footer.ejs') %>
+
+</html>

@@ -50,30 +50,45 @@ app.get('/listagemBrinquedo', (req, res)=>{
 
 //EDITAR
 
-app.get('/editarCategoria/:cod_categoria', (req, res)=>{
+app.get('/editarBrinquedo/:cod_brinquedo', (req, res)=>{
 
-    let {cod_categoria} = req.params
+    let {cod_brinquedo} = req.params
     
-    urlListarCategoriaPk = `http://localhost:3000/listarCategoriaPk/${cod_categoria}`
+    urlListarBrinquedoPK = `http://localhost:3000/listarDadosPK/${cod_brinquedo}`
 
-    axios.get(urlListarCategoriaPk)
+    axios.get(urlListarBrinquedoPK)
     .then((response)=>{
         // console.log(response.data);
-        let categoria = response.data;
-        res.render('categoria/editarCategoria.ejs', {categoria});
+        let brinquedos = response.data;
+        res.render('categoria/editarBrinquedo.ejs', {brinquedos});
     })
     
 })
 
-app.post('/editarCategoria', (req, res)=>{
+app.post('/editarBrinquedo', (req, res)=>{
 
-    let urlEditar = 'http://localhost:3000/alterarCategoria'
+    let urlEditar = 'http://localhost:3000/alterarDados'
 
     axios.put(urlEditar, req.body)
     .then((response)=>{
-        res.send('dado alterado')
+        res.redirect('/listagemBrinquedo')
     })
 })
+
+app.get('/excluirBrinquedo/:cod_brinquedo', (req, res)=>{
+    console.log(req.params);
+ 
+     let {cod_brinquedo} = req.params;
+ 
+     const urlExcluirBrinquedo = `http://localhost:3000/excluirDados/${cod_brinquedo}`;
+ 
+     axios.delete(urlExcluirBrinquedo)
+     .then((response)=>{
+         res.redirect('/listagemBrinquedo');
+     });
+     
+ });
+ 
 
 /* FIM DAS ROTAS DE CATEGORIA */
 

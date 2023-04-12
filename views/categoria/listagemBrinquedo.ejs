@@ -16,14 +16,21 @@
 
                     <div class="card mt-2 p1">
                         <div class="card-body">
-                            <%= brinquedos.nome_brinquedo %>
-                            <%= brinquedos.cod_brinquedo %>
-                            <%= brinquedos.modelo_brinquedo %>
+                            Nome: <%= brinquedos.nome_brinquedo %> <br>
+                            Código: <%= brinquedos.cod_brinquedo %> <br>
+                            Modelo: <%= brinquedos.modelo_brinquedo %>
+                        </div>
+
+                        <div class="btn-group mr-2">
+                            <a href="/editarBrinquedo/<%= brinquedos.cod_brinquedo %>" class="btn btn-success btn-sm mr-2 ml-2">EDITAR</a>
+                            <a href="/excluirBrinquedo/<%= brinquedos.cod_brinquedo %>" class="btn btn-danger btn-sm mr-2">EXCLUIR</a>
                         </div>
                         <% }) %>
 
+                       
                     </div>
-
+                   
+                
 
 
         </body>
